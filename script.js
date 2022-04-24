@@ -23,4 +23,18 @@ let searchicon = document.querySelector("#search-bar-icon");
 let searchformdisplay = document.querySelector(".search-form-container");
 searchicon.addEventListener("click", function () {
   searchformdisplay.classList.toggle("search-form-container-active");
+  favbody.classList.remove("fav-active");
+});
+let favicon = document.querySelector("#fav-icon");
+let favbody = document.querySelector(".fav-body");
+favicon.addEventListener("click", function () {
+  favbody.classList.toggle("fav-active");
+  searchformdisplay.classList.remove("search-form-container-active");
+});
+let navitems = document.querySelectorAll(".nav-items");
+navitems.forEach(function (n) {
+  n.addEventListener("click", function () {
+    favbody.classList.remove("fav-active");
+    searchformdisplay.classList.remove("search-form-container-active");
+  });
 });
