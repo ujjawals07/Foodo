@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 70%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  line-height: 1.4;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (min-content)[8];
+      grid-template-rows: repeat(8, -webkit-min-content);
+      grid-template-rows: repeat(8, min-content);
+  -ms-grid-columns: (minmax(min-content, 25rem))[6];
+      grid-template-columns: repeat(6, minmax(-webkit-min-content, 25rem));
+      grid-template-columns: repeat(6, minmax(min-content, 25rem));
+}
+
+.headers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  grid-column: 1/-1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0rem 1rem 1rem #f6f3f3;
+          box-shadow: 0rem 1rem 1rem #f6f3f3;
+}
+
+.logo {
+  width: 8rem;
+}
+
+.nav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.nav-items {
+  margin: 0 2.5rem;
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-items:hover {
+  color: #70b34d;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 3rem;
+}
+
+.i {
+  margin: 0.5rem 1rem;
+  list-style: none;
+  font-size: 2rem;
+  color: #062d51;
+  list-style: none;
+  text-decoration: none;
+  padding: 1rem 0.8rem;
+}
+
+.i:hover {
+  background-color: whitesmoke;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.menubar {
+  font-size: 2.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+#menu {
+  display: none;
+}
+
+@media (max-width: 415px) {
+  .i {
+    margin: 0.5rem 0.3rem;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .logo {
+    width: 5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 940px) {
+  html {
+    font-size: 65%;
+  }
+  #menu {
+    display: block;
+  }
+  header .nav_list {
+    position: absolute;
+    top: 10%;
+    left: -120%;
+    width: 100%;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 6000;
+  }
+  header .nav_list.active {
+    left: 0;
+  }
+  header .nav-items {
+    padding: 1.3rem;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.269);
+    z-index: 6000;
+  }
+  header .nav-items:hover {
+    color: goldenrod;
+  }
+}
+
+@-webkit-keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(5rem);
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(5rem);
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+}
+
+.search-form-container {
+  text-align: center;
+  margin-top: 4rem;
+  display: none;
+  -webkit-animation: fadeUp 0.4s linear;
+          animation: fadeUp 0.4s linear;
+}
+
+#search-box {
+  width: 60%;
+  height: 4rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid darkgreen;
+  cursor: pointer;
+}
+
+.search-form-container form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.7rem;
+  color: #130f40;
+  text-transform: none;
+  padding-right: 1rem;
+}
+
+.search-form-container form label {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #130f40;
+}
+
+.i2:hover {
+  color: #70b34d;
+}
+
+.search-form-container-active {
+  display: block;
+}
+
+@media (max-width: 615px) {
+  #search-box {
+    width: 80%;
+    height: 4rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
