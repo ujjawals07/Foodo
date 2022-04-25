@@ -1,5 +1,6 @@
 @import "body/fav";
 @import "body/login";
+@import "body/home";
 
 *,
 *::before,
@@ -64,6 +65,7 @@ body {
   //position: relative;
   // position: absolute;
 }
+
 .i {
   margin: 0.5rem 1rem;
   list-style: none;
@@ -103,6 +105,7 @@ body {
     margin-left: 0.5rem;
   }
 }
+
 @media (max-width: 940px) {
   html {
     font-size: 65%;
@@ -111,7 +114,9 @@ body {
   #menu {
     display: block;
   }
-
+  .hide{
+    display: none;
+  }
   header .nav_list {
     position: absolute;
     top: 10%;

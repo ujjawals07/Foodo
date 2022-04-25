@@ -18,13 +18,14 @@ window.onscroll = () => {
   menu.classList.remove("fa-times");
   navlist.classList.remove("active");
 };
-
+let home = document.querySelector(".home"); //home-section
 let searchicon = document.querySelector("#search-bar-icon");
 let searchformdisplay = document.querySelector(".search-form-container");
 searchicon.addEventListener("click", function () {
-  searchformdisplay.classList.toggle("search-form-container-active");
+  searchformdisplay.classList.add("search-form-container-active");
   favbody.classList.remove("fav-active");
   loginform.classList.remove("login-form-container-active");
+  home.classList.add("home-deactive");
 });
 let favicon = document.querySelector("#fav-icon");
 let favbody = document.querySelector(".fav-body");
@@ -61,3 +62,25 @@ backtologin.addEventListener("click", function () {
   signupform.classList.remove("form2-active");
   formlogin.classList.remove("hidden");
 });
+document.querySelector(".home").onmousemove = (e) => {
+  let x = (window.innerWidth - e.pageX * 2) / 90;
+  let y = (window.innerHeight - e.pageY * 2) / 90;
+
+  document.querySelector(
+    ".home .home-parallax-img"
+  ).style.transform = `translateX(${y}px) translateY(${x}px)`;
+};
+
+document.querySelector(".home").onmouseleave = () => {
+  document.querySelector(
+    ".home .home-parallax-img"
+  ).style.transform = `translateX(0px) translateY(0px)`;
+};
+let homebtn = document.querySelector("#home-btn");
+
+homebtn.addEventListener("click", function () {
+  console.log("v");
+  home.classList.remove("home-deactive");
+});
+
+
