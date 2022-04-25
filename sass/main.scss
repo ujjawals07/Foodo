@@ -1,4 +1,5 @@
 @import "body/fav";
+@import "body/login";
 
 *,
 *::before,
@@ -74,7 +75,7 @@ body {
   padding: 1rem 0.8rem;
 
   &:hover {
-    background-color: whitesmoke;
+    background-color: rgba(224, 217, 217, 0.436);
     transition: 0.3s;
 
     cursor: pointer;

@@ -94,6 +94,111 @@
           box-shadow: none;
 }
 
+.login-form-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: calc(100vh - 8.5rem);
+  padding: 0 2rem;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  display: none;
+}
+
+.login-form-container-active {
+  display: block;
+}
+
+.login-form-container form {
+  margin: 2rem auto;
+  max-width: 40rem;
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  -webkit-animation: fadeUp 0.4s linear;
+  animation: fadeUp 0.4s linear;
+  background-color: black;
+  opacity: 0.8;
+  -webkit-box-shadow: 0rem 1rem 1rem black;
+          box-shadow: 0rem 1rem 1rem black;
+}
+
+h3 {
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #06962f;
+  font-family: sans-serif;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.box {
+  margin: 0.7rem 0;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: #130f40;
+  text-transform: none;
+  width: 100%;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+.remember {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.btn {
+  margin: 1rem 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  height: 3rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background-color: #27ae60;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background-color: #06962f;
+}
+
+p {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.login-btn {
+  color: #27ae60;
+  cursor: pointer;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.login-btn:hover {
+  text-decoration: underline;
+}
+
 *,
 *::before,
 *::after {
@@ -190,7 +295,7 @@ body {
 }
 
 .i:hover {
-  background-color: whitesmoke;
+  background-color: rgba(224, 217, 217, 0.436);
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;

@@ -24,17 +24,28 @@ let searchformdisplay = document.querySelector(".search-form-container");
 searchicon.addEventListener("click", function () {
   searchformdisplay.classList.toggle("search-form-container-active");
   favbody.classList.remove("fav-active");
+  loginform.classList.remove("login-form-container-active");
 });
 let favicon = document.querySelector("#fav-icon");
 let favbody = document.querySelector(".fav-body");
 favicon.addEventListener("click", function () {
   favbody.classList.toggle("fav-active");
   searchformdisplay.classList.remove("search-form-container-active");
+  loginform.classList.remove("login-form-container-active");
 });
 let navitems = document.querySelectorAll(".nav-items");
 navitems.forEach(function (n) {
   n.addEventListener("click", function () {
     favbody.classList.remove("fav-active");
     searchformdisplay.classList.remove("search-form-container-active");
+    loginform.classList.remove("login-form-container-active");
   });
+});
+
+let loginicon = document.querySelector("#cart-user");
+let loginform = document.querySelector(".login-form-container");
+loginicon.addEventListener("click", function () {
+  loginform.classList.toggle("login-form-container-active");
+  favbody.classList.remove("fav-active");
+  searchformdisplay.classList.remove("search-form-container-active");
 });
