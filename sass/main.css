@@ -111,7 +111,8 @@
 }
 
 .login-form-container form {
-  margin: 2rem auto;
+  margin-top: 3rem;
+  margin-left: 28%;
   max-width: 40rem;
   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
@@ -124,6 +125,7 @@
   opacity: 0.8;
   -webkit-box-shadow: 0rem 1rem 1rem black;
           box-shadow: 0rem 1rem 1rem black;
+  position: absolute;
 }
 
 h3 {
@@ -136,7 +138,9 @@ h3 {
           filter: brightness(1.75);
 }
 
-.box {
+.box,
+.create-box,
+#username {
   margin: 0.7rem 0;
   border-radius: 0.5rem;
   background: #ffffff;
@@ -166,19 +170,21 @@ label {
   color: white;
 }
 
-.btn {
+.btn,
+.create-btn {
   margin: 1rem 0;
   width: 100%;
   text-align: center;
   cursor: pointer;
   height: 3rem;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   background-color: #27ae60;
   text-transform: capitalize;
 }
 
-.btn:hover {
+.btn:hover,
+.create-btn:hover {
   background-color: #06962f;
 }
 
@@ -188,15 +194,37 @@ p {
   color: white;
 }
 
-.login-btn {
+.login-btn,
+.create-btn-login {
   color: #27ae60;
   cursor: pointer;
   -webkit-filter: brightness(1.75);
           filter: brightness(1.75);
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.create-btn-login:hover {
   text-decoration: underline;
+}
+
+.form2 {
+  position: relative;
+  top: 0;
+  display: none;
+}
+
+.form2-active {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .login-form-container form {
+    margin-left: 0%;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 *,

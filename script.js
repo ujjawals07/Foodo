@@ -49,3 +49,15 @@ loginicon.addEventListener("click", function () {
   favbody.classList.remove("fav-active");
   searchformdisplay.classList.remove("search-form-container-active");
 });
+let formlogin = document.querySelector(".form-login");
+let signupform = document.querySelector(".form2");
+let createaccount = document.querySelector("#create");
+createaccount.addEventListener("click", function () {
+  signupform.classList.add("form2-active");
+  formlogin.classList.add("hidden");
+});
+let backtologin = document.querySelector("#create-a");
+backtologin.addEventListener("click", function () {
+  signupform.classList.remove("form2-active");
+  formlogin.classList.remove("hidden");
+});
