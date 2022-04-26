@@ -19,7 +19,7 @@
       <a href="#" class="fas fa-bars menubar" id="menu"></a>
       <img src="img/logo.png" alt="" srcset="" class="logo" />
 
-      <nav class="nav_list nav" id="navlist">
+      <nav class="nav_list" id="navlist">
         <li class="nav-items" id="home-btn">Home</li>
         <li class="nav-items" id="products">About</li>
         <li class="nav-items" id="upcoming">Popular</li>
@@ -45,44 +45,20 @@
         <label for="search-box" class="fas fa-search i i2"></label>
         
       </form>
-      <div class="fav-container">
-        <div class="fav-box">
-          <img src="img/blog-1.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-      </div>
-      <div class="fav-container">
-        <div class="fav-box">
-          <img src="img/blog-1.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-      </div>
-      <div class="fav-container">
-        <div class="fav-box">
-          <img src="img/blog-1.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-      </div>
-      <div class="fav-container">
-        <div class="fav-box">
-          <img src="img/blog-1.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
+      <div class = "meal-result">
+        <h2 class = "title">Your Search Results:</h2>
+        <div id= "meal" class="meal-container">
+        <!-- <div class = "meal-item">
+            <div class = "meal-img">
+              <img src = "img/cat-2.png" alt = "food" class="meal-pic">
+            </div>
+            <div class = "meal-name">
+              <h3 class="meal-result-h">Potato Chips</h3>
+              <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
+            </div>
+            <div class="fas fa-heart heart"></div>
+          </div>  -->
+       
         </div>
       </div>
     </section>
@@ -186,6 +162,7 @@
           </div>
           <button class="remove">Remove</button>
         </div>
+  
       </div>
     </section>
 
@@ -270,6 +247,31 @@
       </div>
   
   </section>
+  
+  <div class = "meal-details">
+
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+      <i class = "fas fa-times"></i>
+    </button>
+
+
+    <div class = "meal-details-content">
+     <h2 class = "recipe-title">Meals Name Here</h2>
+      <p class = "recipe-category">Category Name</p>
+      <div class = "recipe-instruct">
+        <h3>Instructions:</h3>
+        <p class="recipe-para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo blanditiis quis accusantium natus! Porro, reiciendis maiores molestiae distinctio veniam ratione ex provident ipsa, soluta suscipit quam eos velit autem iste!</p>
+        <p class="recipe-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam voluptatibus ad obcaecati magnam, esse numquam nisi ut adipisci in?</p>
+      </div>
+      <div class = "recipe-meal-img">
+        <img src = "img/blog-1.jpg" alt = "">
+      </div>
+      <div class = "recipe-link">
+        <a href = "#" target = "_blank">Watch Video</a>
+      </div> 
+    </div>
+  </div>
+
     <script src="script.js"></script>
   </body>
 </html>

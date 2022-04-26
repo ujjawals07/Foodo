@@ -1,6 +1,8 @@
 @import "body/fav";
 @import "body/login";
 @import "body/home";
+@import "body/mealdetails";
+@import "body/mealitem";
 
 *,
 *::before,
@@ -114,7 +116,7 @@ body {
   #menu {
     display: block;
   }
-  .hide{
+  .hide {
     display: none;
   }
   header .nav_list {
@@ -157,7 +159,7 @@ body {
 }
 .search-form-container {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 1rem;
   display: none;
   animation: fadeUp 0.4s linear;
 }
