@@ -22,6 +22,7 @@
     overflow-y: scroll;
     display: none;
     padding: 2rem 0;
+    z-index: 100000000;
   }
   .meal-details::-webkit-scrollbar{
     width: 10px;
@@ -125,4 +126,44 @@
   
   
   
+  .footers {
+    grid-column: 1/-1;
+    padding-top: 10rem;
+  }
   
+  .box-container-f {
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background: #f9f9f9;
+    padding: 2rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .box-f {
+    flex: 1 1 20rem;
+  }
+  
+  .h-f {
+    font-size: 2rem;
+    padding-top: 2rem;
+    font-family: sans-serif;
+    color: rgb(27, 14, 74);
+    text-transform: capitalize;
+    display: block;
+  }
+  
+  .item-f {
+    color: #666;
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: block;
+    padding-top: 1rem;
+    border-bottom: none;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      color: goldenrod;
+    }
+  } 

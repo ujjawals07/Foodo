@@ -87,6 +87,7 @@ const recipeCloseBtn = document.getElementById("recipe-close-btn");
 // event listeners
 searchBtn.addEventListener("click", getMealList);
 searchmealList.addEventListener("click", getMealRecipe);
+
 recipeCloseBtn.addEventListener("click", () => {
   mealDetailsContent.parentElement.classList.remove("showRecipe");
 });
@@ -131,6 +132,7 @@ function getMealRecipe(e) {
   e.preventDefault();
   if (e.target.classList.contains("recipe-btn")) {
     let mealItem = e.target.parentElement.parentElement;
+    console.log(mealItem);
     fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`
     )
@@ -160,14 +162,33 @@ function mealRecipeModal(meal) {
   mealDetailsContent.innerHTML = html;
   mealDetailsContent.parentElement.classList.add("showRecipe");
 }
+
+function getMealRecipes(e) {
+  e.preventDefault();
+  console.log(e);
+  let uj = e.target.classList.contains("recipe-btn");
+  console.log(uj);
+  if (e.target.classList.contains("recipe-btn")) {
+    let mealItem = e.target.parentElement.parentElement;
+    console.log(mealItem);
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => mealRecipeModal(data.meals));
+  }
+}
+
 let bestmealcontainer = document.querySelector(".best-meal-container");
+let bestmealid = document.querySelector("#best-meal");
+bestmealid.addEventListener("click", getMealRecipes);
 function setMealList() {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken`)
     .then((response) => response.json())
     .then((data) => {
       let htmli = "";
       if (data.meals) {
-        for (let index = 2; index < data.meals.length; index++) {
+        for (let index = 0; index < data.meals.length; index++) {
           let meal = data.meals[index];
           console.log(meal);
           htmli += `
@@ -178,7 +199,7 @@ function setMealList() {
            </div>
            <div class = "best-name">
              <h3 class="best-result-h">${meal.strMeal}</h3>
-             <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
+             <a href = "#" class = "recipe-btn view-recipe search-recipe-btn">view Recipe</a>
            </div>
            <div class="fas fa-heart heart"></div>
          </div>
@@ -220,10 +241,9 @@ function popularMealList() {
                 `;
         }
         popularmealcontainer.classList.remove("notFound");
-      } 
+      }
 
       popularmealcontainer.innerHTML = htmli;
     });
 }
 popularMealList();
-
