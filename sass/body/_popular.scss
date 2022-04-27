@@ -1,0 +1,140 @@
+.popular {
+    &-result {
+        margin-top: 9rem;
+      // position: fixed;
+ 
+     overflow-y: scroll;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: calc(100vh - 8.5rem);
+  display: block;
+  background: #000;
+      &-h {
+        font-size: 1.3rem;
+        font-family: cursive;
+        color: rgb(0, 0, 0);
+      
+      }
+    }
+    &-pic {
+      width: 100%;
+    }
+    &-meal-container {
+  
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  
+      gap: 3.5rem;
+      padding: 1.5rem 3rem;
+      animation: fadeUp 0.5s linear;
+    }
+    &-item {
+      border: 2px solid rgb(0, 0, 0);
+      border-radius: 0.5rem;
+      text-align: center;  
+      gap: 1.5rem;
+      padding: 2rem;
+      position: relative;
+      background-color: rgb(245, 245, 245);
+    }
+    &-meal-heading{
+      margin-top: 5rem;
+color: rgb(53, 17, 17);
+font-family: cursive;
+font-size: 3rem;
+text-align: center;
+    }
+  }
+  .comments{
+      grid-row: 9/-1;
+  }
+
+  .blogs .box-container {
+    display: -ms-grid;
+    display: grid;
+   // -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .blogs .box-container .box {
+    border-radius: .5rem;
+    overflow: hidden;
+  }
+  
+  .blogs .box-container .box:hover .image h3 {
+    left: 1.5rem;
+  }
+  
+  .blogs .box-container .box:hover .image img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  
+  .blogs .box-container .box .image {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .blogs .box-container .box .image h3 {
+    position: absolute;
+    z-index: 10;
+    top: 1rem;
+    left: -100%;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    background: #fff;
+    color: #130f40;
+    font-size: 1.5rem;
+  }
+  
+  .blogs .box-container .box .image h3 i {
+    padding-right: .5rem;
+    color: #27ae60;
+  }
+  
+  .blogs .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .blogs .box-container .box .content {
+    padding: 2rem 1.5rem;
+    background: #f7f7f7;
+  }
+  
+  .blogs .box-container .box .content .tags {
+    padding-bottom: 1rem;
+  }
+  
+  .blogs .box-container .box .content .tags a {
+    font-size: 1.5rem;
+    color: #666;
+    padding-right: .5rem;
+  }
+  
+  .blogs .box-container .box .content .tags a:hover {
+    color: #27ae60;
+  }
+  
+  .blogs .box-container .box .content .tags a i {
+    color: #27ae60;
+    padding-right: .5rem;
+  }
+  
+  .blogs .box-container .box .content h3 {
+    font-size: 2rem;
+    color: #130f40;
+  }
+  
+  .blogs .box-container .box .content p {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 1rem 0;
+    line-height: 2;
+  }

@@ -1,13 +1,4 @@
 "use strict";
-const search = async function () {
-  const res = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?i=egg`
-  );
-  console.log(res);
-  const data = res.json();
-  console.log(data);
-};
-search();
 let menu = document.querySelector("#menu");
 let navlist = document.querySelector(".nav_list");
 menu.onclick = () => {
@@ -18,7 +9,7 @@ window.onscroll = () => {
   menu.classList.remove("fa-times");
   navlist.classList.remove("active");
 };
-
+let containers = document.querySelector(".containers");
 let home = document.querySelector(".home"); //home-section
 let searchicon = document.querySelector("#search-bar-icon");
 let searchformdisplay = document.querySelector(".search-form-container");
@@ -27,7 +18,7 @@ searchicon.addEventListener("click", function () {
   favbody.classList.remove("fav-active");
   loginform.classList.remove("login-form-container-active");
   home.classList.add("home-deactive");
-
+  containers.classList.add("containers-deactiveate");
 });
 let favicon = document.querySelector("#fav-icon");
 let favbody = document.querySelector(".fav-body");
@@ -35,6 +26,7 @@ favicon.addEventListener("click", function () {
   favbody.classList.toggle("fav-active");
   searchformdisplay.classList.remove("search-form-container-active");
   loginform.classList.remove("login-form-container-active");
+  containers.classList.toggle("containers-deactiveate");
 });
 let navitems = document.querySelectorAll(".nav-items");
 navitems.forEach(function (n) {
@@ -42,6 +34,7 @@ navitems.forEach(function (n) {
     favbody.classList.remove("fav-active");
     searchformdisplay.classList.remove("search-form-container-active");
     loginform.classList.remove("login-form-container-active");
+    containers.classList.remove("containers-deactiveate");
   });
 });
 
@@ -51,6 +44,7 @@ loginicon.addEventListener("click", function () {
   loginform.classList.toggle("login-form-container-active");
   favbody.classList.remove("fav-active");
   searchformdisplay.classList.remove("search-form-container-active");
+  containers.classList.toggle("containers-deactiveate");
 });
 let formlogin = document.querySelector(".form-login");
 let signupform = document.querySelector(".form2");
@@ -166,12 +160,70 @@ function mealRecipeModal(meal) {
   mealDetailsContent.innerHTML = html;
   mealDetailsContent.parentElement.classList.add("showRecipe");
 }
-/*   <div class = "meal-item" data-id = "${meal.idMeal}">
-                        <div class = "meal-img">
-                            <img src = "${meal.strMealThumb}" alt = "food">
-                        </div>
-                        <div class = "meal-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
-                        </div>
-                    </div>*/
+let bestmealcontainer = document.querySelector(".best-meal-container");
+function setMealList() {
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken`)
+    .then((response) => response.json())
+    .then((data) => {
+      let htmli = "";
+      if (data.meals) {
+        for (let index = 2; index < data.meals.length; index++) {
+          let meal = data.meals[index];
+          console.log(meal);
+          htmli += `
+        
+          <div class = "best-item" data-id = "${meal.idMeal}">
+          <div class = "best-img">
+             <img src = "${meal.strMealThumb}" alt = "food" class="best-pic">
+           </div>
+           <div class = "best-name">
+             <h3 class="best-result-h">${meal.strMeal}</h3>
+             <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
+           </div>
+           <div class="fas fa-heart heart"></div>
+         </div>
+                `;
+        }
+        bestmealcontainer.classList.remove("notFound");
+      } else {
+        htmli = "Sorry, we didn't find any meal!";
+        bestmealcontainer.classList.add("notFound");
+      }
+
+      bestmealcontainer.innerHTML = htmli;
+    });
+}
+setMealList();
+
+let popularmealcontainer = document.querySelector(".popular-meal-container");
+function popularMealList() {
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=egg`)
+    .then((response) => response.json())
+    .then((data) => {
+      let htmli = "";
+      if (data.meals) {
+        for (let index = 11; index < data.meals.length; index++) {
+          let meal = data.meals[index];
+          console.log(meal);
+          htmli += `
+        
+          <div class = "popular-item" data-id = "${meal.idMeal}">
+          <div class = "popular-img">
+             <img src = "${meal.strMealThumb}" alt = "food" class="best-pic">
+           </div>
+           <div class = "popular-name">
+             <h3 class="popular-result-h">${meal.strMeal}</h3>
+             <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
+           </div>
+           <div class="fas fa-heart heart"></div>
+         </div>
+                `;
+        }
+        popularmealcontainer.classList.remove("notFound");
+      } 
+
+      popularmealcontainer.innerHTML = htmli;
+    });
+}
+popularMealList();
+

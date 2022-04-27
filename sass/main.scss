@@ -3,6 +3,9 @@
 @import "body/home";
 @import "body/mealdetails";
 @import "body/mealitem";
+@import "body/bestmeal";
+@import "body/about";
+@import "body/popular";
 
 *,
 *::before,
@@ -20,12 +23,12 @@ html {
 body {
   line-height: 1.4;
 }
-
-.container {
-  display: grid;
-  grid-template-rows: repeat(8, min-content);
-  grid-template-columns: repeat(6, minmax(min-content, 25rem));
-  //position: relative;
+.containers{
+  display: block;
+  position: relative;
+}
+.containers-deactiveate{
+  display: none;
 }
 .headers {
   display: flex;
@@ -158,10 +161,18 @@ body {
   }
 }
 .search-form-container {
+  background: rgb(255, 255, 255);
+  position: fixed;
+  overflow-y: scroll;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: calc(100vh - 8.5rem);
   text-align: center;
-  margin-top: 1rem;
+ // margin-top: 1rem;
   display: none;
   animation: fadeUp 0.4s linear;
+  //position: fixed;
 }
 #search-box {
   width: 60%;
