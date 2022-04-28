@@ -10,8 +10,8 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
-    background-color: #f0f0f0;
+    color: rgb(216, 216, 216);
+    background-color: #1c1a1a;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -47,6 +47,9 @@
   }
   .meal-details-content p:not(.recipe-category){
     padding: 1rem 0;
+    color: antiquewhite;
+    font-size: 1.5rem;
+    font-family: sans-serif;
   }
   .recipe-close-btn{
     position: absolute;
@@ -70,6 +73,9 @@
   .recipe-title{
     letter-spacing: 1px;
     padding-bottom: 1rem;
+    color: whitesmoke;
+    font-size: 3rem;
+    font-family: cursive;
   }
   .recipe-category{
     font-weight: 600;
@@ -80,15 +86,15 @@
     -moz-border-radius: 0.3rem;
     -ms-border-radius: 0.3rem;
     -o-border-radius: 0.3rem;
-    color: black;
+    color: rgb(255, 255, 255);
   }
   
   .recipe-instruct{
     padding: 1rem 0;
   }
   .recipe-meal-img img{
-    width: 100px;
-    height: 100px;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -98,12 +104,14 @@
     display: block;
   }
   .recipe-link{
-    margin: 1.4rem 0;
+    margin-top: 4rem;
+    text-align: center;
   }
   .recipe-link a{
-    color: rgb(0, 0, 0);
-    font-size: 1.2rem;
+    color: rgb(19, 255, 31);
+    font-size: 2rem;
     font-weight: 700;
+    font-family: cursive;
     transition: all 0.4s linear;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
@@ -125,45 +133,3 @@
   }
   
   
-  
-  .footers {
-    grid-column: 1/-1;
-    padding-top: 10rem;
-  }
-  
-  .box-container-f {
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    background: #f9f9f9;
-    padding: 2rem 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .box-f {
-    flex: 1 1 20rem;
-  }
-  
-  .h-f {
-    font-size: 2rem;
-    padding-top: 2rem;
-    font-family: sans-serif;
-    color: rgb(27, 14, 74);
-    text-transform: capitalize;
-    display: block;
-  }
-  
-  .item-f {
-    color: #666;
-    font-size: 1.5rem;
-    padding-bottom: 1.5rem;
-    display: block;
-    padding-top: 1rem;
-    border-bottom: none;
-    text-decoration: none;
-    cursor: pointer;
-    &:hover {
-      color: goldenrod;
-    }
-  } 

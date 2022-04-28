@@ -1,4 +1,3 @@
-@import "body/fav";
 @import "body/login";
 @import "body/home";
 @import "body/mealdetails";
@@ -7,6 +6,8 @@
 @import "body/about";
 @import "body/popular";
 @import "body/blog";
+@import "body/review";
+@import "body/footer";
 
 *,
 *::before,
@@ -24,11 +25,11 @@ html {
 body {
   line-height: 1.4;
 }
-.containers{
+.containers {
   display: block;
   position: relative;
 }
-.containers-deactiveate{
+.containers-deactiveate {
   display: none;
 }
 .headers {
@@ -67,7 +68,7 @@ body {
 }
 .icons {
   display: flex;
-  padding: 0 3rem;
+  padding: 0 1rem;
   //position: relative;
   // position: absolute;
 }
@@ -102,7 +103,7 @@ body {
 
 @media (max-width: 415px) {
   .i {
-    margin: 0.5rem 0.3rem;
+    
     font-size: 1.3rem;
     padding: 0.5rem 0.5rem;
   }
@@ -170,7 +171,7 @@ body {
   z-index: 1000;
   height: calc(100vh - 8.5rem);
   text-align: center;
- // margin-top: 1rem;
+  // margin-top: 1rem;
   display: none;
   animation: fadeUp 0.4s linear;
   //position: fixed;

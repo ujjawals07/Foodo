@@ -21,16 +21,15 @@
 
       <nav class="nav_list" id="navlist">
         <li class="nav-items" id="home-btn">Home</li>
-        <li class="nav-items" id="products">About</li>
-        <li class="nav-items" id="upcoming">Popular</li>
-        <li class="nav-items" id="review">Menu</li>
-        <li class="nav-items" id="upcoming">Order</li>
-        <li class="nav-items" id="review">Blogs</li>
+        <li class="nav-items" id="about">About</li>
+        <li class="nav-items" id="popular-meal">Popular</li>
+        <li class="nav-items" id="best-chicken">Best of chickens</li>
+        <li class="nav-items" id="blog">Blogs</li>
+        <li class="nav-items" id="review">Reviews</li>
       </nav>
 
       <div class="icons">
         <a id="search-bar-icon" class="fas fa-search i"></a>
-        <a id="fav-icon" class="fas fa-heart i"></a>
         <a id="cart-user" class="fas fa-user i"></a>
       </div>
     </header>
@@ -61,107 +60,7 @@
       </div>
     </section>
 
-    <section class="fav-body">
-      <h5 class="fav-title-heading">wishlist</h5>
-      <div class="fav-container">
-        <div class="fav-box">
-          <img src="img/blog-1.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-1.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-2.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-3.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="fav-box">
-          <img src="img/blog-2.jpg" alt="" srcset="" class="fav-img" />
-          <div class="fav-details">
-            <div class="fav-item-name">pizza</div>
-            <button class="view-recipe">view recipe</button>
-          </div>
-          <button class="remove">Remove</button>
-        </div>
-      </div>
-    </section>
+]
 
     <div class="login-form-container">
       <form action="" class="form-login">
@@ -237,7 +136,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis unde
           dolores temporibus hic quam debitis tenetur harum nemo.
         </p>
-        <a href="#" class="order-btn">order now</a>
+       
       </div>
 
       <div class="image">
@@ -282,9 +181,11 @@
     </div>
     <div class="containers">
       <h4 class="best-meal-heading">BEst of chickens</h4>
-      <section class="best-result">
+      <section class="best-result" id="best">
         <div id="best-meal" class="best-meal-container">
-          <!-- <div class = "best-item">
+     <!--
+
+     <div class = "best-item">
        <div class = "best-img">
           <img src = "img/cat-2.png" alt = "food" class="best-pic">
         </div>
@@ -293,7 +194,7 @@
           <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
         </div>
         <div class="fas fa-heart heart"></div>
-      </div>  -->
+      </div>      -->  
         </div>
       </section>
       <section class="about" id="about">
@@ -339,7 +240,7 @@
         </div>
       </section>
       <h4 class="popular-meal-heading">Popular Dishes</h4>
-      <section class="popular-result">
+      <section class="popular-result" id="popular-section">
         <div id="popular-meal" class="popular-meal-container">
           <!-- <div class = "popular-item">
      <div class = "popular-img">
@@ -441,48 +342,19 @@
           </div>
         </div>
       </section>
-      <footer class="footers">
 
-        <div class="box-container-f">
-      
-            <div class="box-f">
-           <h7 class="h-f">our stores</h7>
-                <a href="#" class="item-f">india</a>
-                <a href="#" class="item-f">USA</a>
-                <a href="#" class="item-f">japan</a>
-                <a href="#" class="item-f">paris</a>
-            </div>
-      
-            <div class="box-f">
-              <h7 class="h-f">quick links</h7>
-                <a  class="item-f" id="home">home</a>
-                <a  class="item-f" id="products">products</a>
-                <a  class="item-f" id="upcoming">upcoming</a>
-                <a  class="item-f" id="review">review</a>
-            </div>
-      
-            <div class="box-f">
-              <h7 class="h-f">Extra links</h7>
-                <a href="#" class="item-f">my account</a>
-                <a href="#" class="item-f">my favorite</a>
-                <a href="#" class="item-f">my orders</a>
-                <a href="#" class="item-f">newsletter</a>
-            </div>
-      
-            <div class="box-f">
-              <h7 class="h-f">follow us</h7>
-                <a href="#" class="item-f">facebook</a>
-                <a href="#" class="item-f">twitter</a>
-                <a href="#" class="item-f">instagram</a>
-                <a href="#" class="item-f">linkedin</a>
-            </div>
-      
-        <p class="credit">created by ujjawal atheist</p>
-      
-        </div>
-      
-      </footer>
     </div>
+    <footer class="footers">
+      <ul class="navi">
+          <li class="navi-list"><a href="#" class="navi-btn">ABOUT</a></li>
+          <li class="navi-list navi-list-2"><a href="#" class="navi-btn navi-btn-2">Term</a></li>
+          <li class="navi-list"><a href="#" class="navi-btn">Privcy </a></li>
+          <li class="navi-list"><a href="#" class="navi-btn">Help</a></li>
+      </ul>
+      <div class="paragraph-f">
+      <p class="navi-p">&copy;Copyright by ujjawal atheist </p>
+      </div>
+     </footer>
     <script src="script.js"></script>
   </body>
 </html>

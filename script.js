@@ -1,4 +1,40 @@
 "use strict";
+const about = document.querySelector("#about");
+const aboutsection = document.querySelector(".about");
+
+about.addEventListener("click", function () {
+  aboutsection.scrollIntoView({ behavior: "smooth" });
+});
+
+const popularnavbtn = document.querySelector("#popular-meal");
+const popularsection = document.querySelector("#popular-section");
+
+popularnavbtn.addEventListener("click", function () {
+  popularsection.scrollIntoView({ behavior: "smooth" });
+});
+
+
+const bestnavbtn = document.querySelector("#best-chicken");
+const bestsection = document.querySelector("#best");
+
+bestnavbtn.addEventListener("click", function () {
+  bestsection.scrollIntoView({ behavior: "smooth" });
+});
+
+
+const blogbtn = document.querySelector("#blog");
+const blogsection = document.querySelector("#blogs");
+
+blogbtn.addEventListener("click", function () {
+  blogsection.scrollIntoView({ behavior: "smooth" });
+});
+
+const reviewbtn = document.querySelector("#review");
+const reviewsection = document.querySelector("#section-review");
+
+reviewbtn.addEventListener("click", function () {
+  reviewsection.scrollIntoView({ behavior: "smooth" });
+});
 let menu = document.querySelector("#menu");
 let navlist = document.querySelector(".nav_list");
 menu.onclick = () => {
@@ -15,23 +51,15 @@ let searchicon = document.querySelector("#search-bar-icon");
 let searchformdisplay = document.querySelector(".search-form-container");
 searchicon.addEventListener("click", function () {
   searchformdisplay.classList.add("search-form-container-active");
-  favbody.classList.remove("fav-active");
+
   loginform.classList.remove("login-form-container-active");
   home.classList.add("home-deactive");
   containers.classList.add("containers-deactiveate");
 });
-let favicon = document.querySelector("#fav-icon");
-let favbody = document.querySelector(".fav-body");
-favicon.addEventListener("click", function () {
-  favbody.classList.toggle("fav-active");
-  searchformdisplay.classList.remove("search-form-container-active");
-  loginform.classList.remove("login-form-container-active");
-  containers.classList.toggle("containers-deactiveate");
-});
+
 let navitems = document.querySelectorAll(".nav-items");
 navitems.forEach(function (n) {
   n.addEventListener("click", function () {
-    favbody.classList.remove("fav-active");
     searchformdisplay.classList.remove("search-form-container-active");
     loginform.classList.remove("login-form-container-active");
     containers.classList.remove("containers-deactiveate");
@@ -41,10 +69,10 @@ navitems.forEach(function (n) {
 let loginicon = document.querySelector("#cart-user");
 let loginform = document.querySelector(".login-form-container");
 loginicon.addEventListener("click", function () {
-  loginform.classList.toggle("login-form-container-active");
-  favbody.classList.remove("fav-active");
+  loginform.classList.add("login-form-container-active");
+
   searchformdisplay.classList.remove("search-form-container-active");
-  containers.classList.toggle("containers-deactiveate");
+  containers.classList.add("containers-deactiveate");
 });
 let formlogin = document.querySelector(".form-login");
 let signupform = document.querySelector(".form2");
@@ -113,7 +141,7 @@ function getMealList() {
                             <h3 class="meal-result-h">${meal.strMeal}</h3>
                             <a href = "#" class = "recipe-btn search-recipe-btn">Get Recipe</a>
                         </div>
-                        <div class="fas fa-heart heart"></div>
+                    
                     </div>
                 `;
         });
@@ -143,7 +171,6 @@ function getMealRecipe(e) {
 
 // create a modal
 function mealRecipeModal(meal) {
-  console.log(meal);
   meal = meal[0];
   let html = `
         <h2 class = "recipe-title">${meal.strMeal}</h2>
@@ -163,25 +190,9 @@ function mealRecipeModal(meal) {
   mealDetailsContent.parentElement.classList.add("showRecipe");
 }
 
-function getMealRecipes(e) {
-  e.preventDefault();
-  console.log(e);
-  let uj = e.target.classList.contains("recipe-btn");
-  console.log(uj);
-  if (e.target.classList.contains("recipe-btn")) {
-    let mealItem = e.target.parentElement.parentElement;
-    console.log(mealItem);
-    fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`
-    )
-      .then((response) => response.json())
-      .then((data) => mealRecipeModal(data.meals));
-  }
-}
-
 let bestmealcontainer = document.querySelector(".best-meal-container");
 let bestmealid = document.querySelector("#best-meal");
-bestmealid.addEventListener("click", getMealRecipes);
+bestmealid.addEventListener("click", getMealRecipe);
 function setMealList() {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken`)
     .then((response) => response.json())
@@ -201,7 +212,7 @@ function setMealList() {
              <h3 class="best-result-h">${meal.strMeal}</h3>
              <a href = "#" class = "recipe-btn view-recipe search-recipe-btn">view Recipe</a>
            </div>
-           <div class="fas fa-heart heart"></div>
+        
          </div>
                 `;
         }
@@ -217,6 +228,8 @@ function setMealList() {
 setMealList();
 
 let popularmealcontainer = document.querySelector(".popular-meal-container");
+let popularmealid = document.getElementById("popular-meal");
+popularmealid.addEventListener("click", getMealRecipe);
 function popularMealList() {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=egg`)
     .then((response) => response.json())
@@ -234,9 +247,9 @@ function popularMealList() {
            </div>
            <div class = "popular-name">
              <h3 class="popular-result-h">${meal.strMeal}</h3>
-             <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
+             <a href = "#" class = "recipe-btn view-recipe search-recipe-btn">view Recipe</a>
            </div>
-           <div class="fas fa-heart heart"></div>
+        
          </div>
                 `;
         }
