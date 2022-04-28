@@ -1,4 +1,5 @@
 "use strict";
+// nav event listners
 const about = document.querySelector("#about");
 const aboutsection = document.querySelector(".about");
 
@@ -13,14 +14,12 @@ popularnavbtn.addEventListener("click", function () {
   popularsection.scrollIntoView({ behavior: "smooth" });
 });
 
-
 const bestnavbtn = document.querySelector("#best-chicken");
 const bestsection = document.querySelector("#best");
 
 bestnavbtn.addEventListener("click", function () {
   bestsection.scrollIntoView({ behavior: "smooth" });
 });
-
 
 const blogbtn = document.querySelector("#blog");
 const blogsection = document.querySelector("#blogs");
@@ -35,6 +34,8 @@ const reviewsection = document.querySelector("#section-review");
 reviewbtn.addEventListener("click", function () {
   reviewsection.scrollIntoView({ behavior: "smooth" });
 });
+
+//menu login search active
 let menu = document.querySelector("#menu");
 let navlist = document.querySelector(".nav_list");
 menu.onclick = () => {
@@ -65,7 +66,7 @@ navitems.forEach(function (n) {
     containers.classList.remove("containers-deactiveate");
   });
 });
-
+//login section
 let loginicon = document.querySelector("#cart-user");
 let loginform = document.querySelector(".login-form-container");
 loginicon.addEventListener("click", function () {
@@ -86,6 +87,8 @@ backtologin.addEventListener("click", function () {
   signupform.classList.remove("form2-active");
   formlogin.classList.remove("hidden");
 });
+
+//home picture effect
 document.querySelector(".home").onmousemove = (e) => {
   let x = (window.innerWidth - e.pageX * 2) / 90;
   let y = (window.innerHeight - e.pageY * 2) / 90;
@@ -228,7 +231,7 @@ function setMealList() {
 setMealList();
 
 let popularmealcontainer = document.querySelector(".popular-meal-container");
-let popularmealid = document.getElementById("popular-meal");
+let popularmealid = document.getElementById("popular-meals");
 popularmealid.addEventListener("click", getMealRecipe);
 function popularMealList() {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=egg`)
@@ -260,3 +263,33 @@ function popularMealList() {
     });
 }
 popularMealList();
+//loging local storage and signup  local storage functions
+
+function signup() {
+  let name = document.getElementById("username").value;
+  let email = document.getElementById("create-email").value;
+  let pass = document.getElementById("create-password").value;
+  let confirmpass = document.getElementById("create-password-confirm").value;
+  localStorage.setItem("name1", name);
+  let useremail = localStorage.setItem("email1", email);
+  let userpass = localStorage.setItem("pass1", pass);
+  localStorage.setItem("confirmpass1", confirmpass);
+}
+function login() {
+  let loginemail = document.getElementById("email").value;
+  let loginpass = document.getElementById("password").value;
+
+  let email1 = localStorage.getItem("email1");
+  let pass1 = localStorage.getItem("pass1");
+  if (email1 == loginemail && pass1 == loginpass) {
+    console.log('yes');
+    loginform.classList.remove("login-form-container-active");
+    containers.classList.remove("containers-deactiveate");
+  } else {
+    alert("wrong");
+  }
+}
+
+document.querySelector("#login-btn").addEventListener("click", function () {
+  login();
+});

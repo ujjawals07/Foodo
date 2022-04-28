@@ -60,7 +60,7 @@
       </div>
     </section>
 
-]
+    ]
 
     <div class="login-form-container">
       <form action="" class="form-login">
@@ -83,7 +83,9 @@
           <input type="checkbox" name="" id="remember-me" />
           <label for="remember-me">remember me</label>
         </div>
-        <input type="submit" value="login now" class="btn" />
+        <button type="button" id="login-btn"  value="login now" class="btn">
+          login now
+        </button>
         <p>forget password? <a id="click" class="login-btn">click here</a></p>
         <p>
           don't have an account? <a id="create" class="login-btn">create one</a>
@@ -121,7 +123,14 @@
           class="create-box"
         />
 
-        <input type="submit" value="sign up" class="create-btn" />
+        <button
+          type="button"
+          onclick="signup()"
+          value="sign up"
+          class="create-btn"
+        >
+          sign up
+        </button>
         <p>
           alredy have an account
           <a id="create-a" class="create-btn-login">back to login</a>
@@ -136,7 +145,6 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis unde
           dolores temporibus hic quam debitis tenetur harum nemo.
         </p>
-       
       </div>
 
       <div class="image">
@@ -183,7 +191,7 @@
       <h4 class="best-meal-heading">BEst of chickens</h4>
       <section class="best-result" id="best">
         <div id="best-meal" class="best-meal-container">
-     <!--
+          <!--
 
      <div class = "best-item">
        <div class = "best-img">
@@ -194,7 +202,7 @@
           <a href = "#" class = "view-recipe search-recipe-btn">view Recipe</a>
         </div>
         <div class="fas fa-heart heart"></div>
-      </div>      -->  
+      </div>      -->
         </div>
       </section>
       <section class="about" id="about">
@@ -241,7 +249,7 @@
       </section>
       <h4 class="popular-meal-heading">Popular Dishes</h4>
       <section class="popular-result" id="popular-section">
-        <div id="popular-meal" class="popular-meal-container">
+        <div id="popular-meals" class="popular-meal-container">
           <!-- <div class = "popular-item">
      <div class = "popular-img">
         <img src = "img/cat-2.png" alt = "food" class="popular-pic">
@@ -326,35 +334,63 @@
         <h4 class="popular-meal-heading">User's comments</h4>
         <div class="review-container">
           <div class="review-box">
-            <img src="img/pexels-koolshooters-8975071.jpg" alt="" class="user-img">
+            <img
+              src="img/pexels-koolshooters-8975071.jpg"
+              alt=""
+              class="user-img"
+            />
             <h5 class="user-name">jonas smith</h5>
-            <p class="user-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et veritatis qui quisquam, error minima obcaecati quibusdam porro quam ullam commodi delectus sint quaerat, molestias sequi explicabo reprehenderit quae eaque.</p>
+            <p class="user-p">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et
+              veritatis qui quisquam, error minima obcaecati quibusdam porro
+              quam ullam commodi delectus sint quaerat, molestias sequi
+              explicabo reprehenderit quae eaque.
+            </p>
           </div>
           <div class="review-box">
-            <img src="img/pexels-koolshooters-8975071.jpg" alt="" class="user-img">
+            <img
+              src="img/pexels-koolshooters-8975071.jpg"
+              alt=""
+              class="user-img"
+            />
             <h5 class="user-name">peter parker</h5>
-            <p class="user-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et veritatis qui quisquam, error minima obcaecati quibusdam porro quam ullam commodi delectus sint quaerat, molestias sequi explicabo reprehenderit quae eaque.</p>
+            <p class="user-p">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et
+              veritatis qui quisquam, error minima obcaecati quibusdam porro
+              quam ullam commodi delectus sint quaerat, molestias sequi
+              explicabo reprehenderit quae eaque.
+            </p>
           </div>
           <div class="review-box">
-            <img src="img/pexels-koolshooters-8975071.jpg" alt="" class="user-img">
+            <img
+              src="img/pexels-koolshooters-8975071.jpg"
+              alt=""
+              class="user-img"
+            />
             <h5 class="user-name">lawrance bill</h5>
-            <p class="user-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et veritatis qui quisquam, error minima obcaecati quibusdam porro quam ullam commodi delectus sint quaerat, molestias sequi explicabo reprehenderit quae eaque.</p>
+            <p class="user-p">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et
+              veritatis qui quisquam, error minima obcaecati quibusdam porro
+              quam ullam commodi delectus sint quaerat, molestias sequi
+              explicabo reprehenderit quae eaque.
+            </p>
           </div>
         </div>
       </section>
-
     </div>
     <footer class="footers">
       <ul class="navi">
-          <li class="navi-list"><a href="#" class="navi-btn">ABOUT</a></li>
-          <li class="navi-list navi-list-2"><a href="#" class="navi-btn navi-btn-2">Term</a></li>
-          <li class="navi-list"><a href="#" class="navi-btn">Privcy </a></li>
-          <li class="navi-list"><a href="#" class="navi-btn">Help</a></li>
+        <li class="navi-list"><a href="#" class="navi-btn">ABOUT</a></li>
+        <li class="navi-list navi-list-2">
+          <a href="#" class="navi-btn navi-btn-2">Term</a>
+        </li>
+        <li class="navi-list"><a href="#" class="navi-btn">Privcy </a></li>
+        <li class="navi-list"><a href="#" class="navi-btn">Help</a></li>
       </ul>
       <div class="paragraph-f">
-      <p class="navi-p">&copy;Copyright by ujjawal atheist </p>
+        <p class="navi-p">&copy;Copyright by ujjawal atheist</p>
       </div>
-     </footer>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
