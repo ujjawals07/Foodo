@@ -1,4 +1,5 @@
 @import "body/login";
+@import "body/fav";
 @import "body/home";
 @import "body/mealdetails";
 @import "body/mealitem";
@@ -103,7 +104,6 @@ body {
 
 @media (max-width: 415px) {
   .i {
-    
     font-size: 1.3rem;
     padding: 0.5rem 0.5rem;
   }
@@ -208,5 +208,23 @@ body {
   #search-box {
     width: 80%;
     height: 4rem;
+  }
+}
+.heart {
+  font-size: 2rem;
+ // margin-top: 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 1.7rem;
+  line-height: 4.5rem;
+  text-decoration: none;
+  border-bottom: none;
+
+  &:hover {
+    color: gold;
   }
 }

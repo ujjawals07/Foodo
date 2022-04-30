@@ -131,6 +131,82 @@ p {
   display: none;
 }
 
+.fav-result {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: calc(100vh - 8.5rem);
+  background: url(../img/banner-3.png) 100% no-repeat;
+  background-size: cover;
+  overflow-y: scroll;
+  padding-bottom: 8rem;
+  display: none;
+}
+
+.fav-result-h {
+  font-size: 1.3rem;
+  font-family: cursive;
+  color: #04e400;
+}
+
+.fav-active {
+  display: block;
+}
+
+.fav-pic {
+  width: 10rem;
+}
+
+.fav-meal-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3.5rem;
+  padding: 1.5rem 3rem;
+  -webkit-animation: fadeUp 0.5s linear;
+          animation: fadeUp 0.5s linear;
+}
+
+.fav-item {
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  background-color: black;
+}
+
+.fav-meal-heading {
+  margin-top: 5rem;
+  color: #351111;
+  font-family: cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.remove-recipe {
+  color: white;
+  background-color: red;
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  margin-left: 1.8rem;
+  border-radius: 50px;
+  font-family: sans-serif;
+  cursor: pointer;
+  -webkit-box-shadow: 0rem 0.1rem 0.2rem rgba(255, 255, 255, 0.612);
+          box-shadow: 0rem 0.1rem 0.2rem rgba(255, 255, 255, 0.612);
+  text-decoration: none;
+}
+
+.remove-recipe:hover {
+  background-color: #590000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -381,6 +457,41 @@ p {
   font-size: 1.8rem;
   font-weight: 600;
   width: 100%;
+}
+
+.message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem 3rem;
+  background-color: #f1eeee;
+  color: black;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+.got {
+  color: black;
+  background-color: #47e147;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+#error {
+  color: #fc0000;
+  z-index: 1000000000;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  font-weight: 600;
 }
 
 .meal-result {
@@ -1053,5 +1164,28 @@ body {
     width: 80%;
     height: 4rem;
   }
+}
+
+.heart {
+  font-size: 2rem;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 1.7rem;
+  line-height: 4.5rem;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.heart:hover {
+  color: gold;
 }
 /*# sourceMappingURL=main.css.map */

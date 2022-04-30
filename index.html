@@ -12,12 +12,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <title>Foodo 'The food nantiton'</title>
   </head>
   <body>
     <header class="headers">
       <a href="#" class="fas fa-bars menubar" id="menu"></a>
-      <img src="img/logo.png" alt="" srcset="" class="logo" />
+      <img src="img/logo.png" alt="" srcset="" class="logo" id="logo-img" />
 
       <nav class="nav_list" id="navlist">
         <li class="nav-items" id="home-btn">Home</li>
@@ -29,6 +30,7 @@
       </nav>
 
       <div class="icons">
+        <a id="fav-icon" class="fas fa-heart i"></a>
         <a id="search-bar-icon" class="fas fa-search i"></a>
         <a id="cart-user" class="fas fa-user i"></a>
       </div>
@@ -45,7 +47,7 @@
       </form>
       <div class="meal-result">
         <h2 class="title">Your Search Results:</h2>
-        <div id="meal" class="meal-container">
+        <div id="meal" class="meal-container searchmealfav">
           <!-- <div class = "meal-item">
             <div class = "meal-img">
               <img src = "img/cat-2.png" alt = "food" class="meal-pic">
@@ -59,17 +61,29 @@
         </div>
       </div>
     </section>
+    <section class="fav-result" id="fav">
+      <div id="fav-meal" class="fav-meal-container">
+        <!-- <div class="fav-item">
+        <div class="fav-img">
+            <img src="img/cat-2.png" alt="food" class="fav-pic" />
+          </div>
+          <div class="fav-name">
+            <h3 class="fav-result-h">Potato Chips</h3>
 
-    ]
-
+            <button class="view-recipe search-recipe-btn">view Recipe</button>
+            <button class="remove-recipe remove-recipe-btn">remove</button>
+          </div>
+        </div>--> 
+      </div>
+    </section>
     <div class="login-form-container">
       <form action="" class="form-login">
         <h3>login form</h3>
         <input
-          type="email"
+          type="text"
           name=""
-          placeholder="enter your email"
-          id="email"
+          placeholder="username"
+          id="login-username"
           class="box"
         />
         <input
@@ -83,7 +97,7 @@
           <input type="checkbox" name="" id="remember-me" />
           <label for="remember-me">remember me</label>
         </div>
-        <button type="button" id="login-btn"  value="login now" class="btn">
+        <button type="button" id="login-btn" value="login now" class="btn">
           login now
         </button>
         <p>forget password? <a id="click" class="login-btn">click here</a></p>
@@ -91,44 +105,45 @@
           don't have an account? <a id="create" class="login-btn">create one</a>
         </p>
       </form>
-      <form action="u" class="form2">
+
+      <form action="u" class="form2" id="formtwo">
         <h3>signup form</h3>
+        <div id="error"></div>
         <input
           type="text"
           name=""
           placeholder="username"
           id="username"
+          class="user-n"
           required
         />
+
         <input
           type="email"
           name=""
           placeholder="enter your email"
           id="create-email"
-          class="create-box"
+          class="create-box email"
           required
         />
+
         <input
           type="password"
           name=""
           placeholder="password"
           id="create-password"
-          class="create-box"
+          class="create-box p1"
+          required
         />
         <input
           type="password"
           name=""
           placeholder="confirm password"
           id="create-password-confirm"
-          class="create-box"
+          class="create-box p2"
+          required
         />
-
-        <button
-          type="button"
-          onclick="signup()"
-          value="sign up"
-          class="create-btn"
-        >
+        <button type="button" value="sign up" class="create-btn">
           sign up
         </button>
         <p>
@@ -187,10 +202,11 @@
         </div>
       </div>
     </div>
+
     <div class="containers">
       <h4 class="best-meal-heading">BEst of chickens</h4>
       <section class="best-result" id="best">
-        <div id="best-meal" class="best-meal-container">
+        <div id="best-meal" class="best-meal-container bestmealsfav">
           <!--
 
      <div class = "best-item">
@@ -205,6 +221,7 @@
       </div>      -->
         </div>
       </section>
+
       <section class="about" id="about">
         <div class="image">
           <img src="img/about-img.png" alt="" />
@@ -249,7 +266,7 @@
       </section>
       <h4 class="popular-meal-heading">Popular Dishes</h4>
       <section class="popular-result" id="popular-section">
-        <div id="popular-meals" class="popular-meal-container">
+        <div id="popular-meals" class="popular-meal-container popularmealsfav">
           <!-- <div class = "popular-item">
      <div class = "popular-img">
         <img src = "img/cat-2.png" alt = "food" class="popular-pic">
