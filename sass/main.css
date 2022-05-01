@@ -217,7 +217,6 @@ p {
   -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
   gap: 2rem;
-  position: relative;
   overflow: hidden;
 }
 
@@ -263,13 +262,6 @@ p {
   margin-top: 5rem;
 }
 
-.home-parallax-img {
-  position: absolute;
-  top: -10rem;
-  right: -10rem;
-  width: 80vw;
-}
-
 .order-btn {
   margin-top: 2rem;
   padding: 0.4rem 0.6rem;
@@ -288,14 +280,6 @@ p {
   background-color: #004000;
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-@media (max-width: 768px) {
-  .home .home-parallax-img {
-    top: 0;
-    right: 0;
-    width: 130%;
-  }
 }
 
 @media (max-width: 450px) {
@@ -533,7 +517,8 @@ p {
   background-color: whitesmoke;
 }
 
-.search-recipe-btn {
+.search-recipe-btn,
+.btn-b {
   background-color: rgba(15, 123, 44, 0.872);
   font-family: sans-serif;
   margin-top: 2rem;
@@ -548,7 +533,8 @@ p {
   text-decoration: none;
 }
 
-.search-recipe-btn:hover {
+.search-recipe-btn:hover,
+.btn-b:hover {
   background-color: #043c04;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -609,6 +595,7 @@ p {
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   margin-top: 10rem;
+  position: relative;
 }
 
 .about .image {
@@ -681,6 +668,21 @@ p {
 
 .about-img {
   width: 5rem;
+}
+
+.about-parallax-img {
+  position: absolute;
+  top: -9rem;
+  left: -47rem;
+  width: 80vw;
+}
+
+@media (max-width: 768px) {
+  .about-parallax-img {
+    top: 0;
+    left: 0;
+    width: 130%;
+  }
 }
 
 .popular-result {

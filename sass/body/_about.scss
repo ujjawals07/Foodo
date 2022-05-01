@@ -3,8 +3,10 @@
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 margin-top: 10rem;
+position: relative;
   }
   
+
   .about .image {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 40rem;
@@ -76,4 +78,16 @@ margin-top: 10rem;
   .about-img{
       width: 5rem;
   }
-  
+  .about-parallax-img {
+    position: absolute;
+    top: -9rem;
+left: -47rem;
+    width: 80vw;
+  }
+  @media (max-width: 768px) {
+    .about-parallax-img {
+      top: 0;
+      left: 0;
+      width: 130%;
+    }
+  }

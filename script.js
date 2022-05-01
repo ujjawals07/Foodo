@@ -107,13 +107,13 @@ logoimg.addEventListener("click", function () {
   home.classList.remove("home-deactive");
 });
 
-//home picture effect
-document.querySelector(".home").onmousemove = (e) => {
+//about picture effect
+document.querySelector(".about").onmousemove = (e) => {
   let x = (window.innerWidth - e.pageX * 2) / 90;
   let y = (window.innerHeight - e.pageY * 2) / 90;
 
   document.querySelector(
-    ".home .home-parallax-img"
+    ".about .about-parallax-img"
   ).style.transform = `translateX(${y}px) translateY(${x}px)`;
 };
 
@@ -154,7 +154,7 @@ function getMealList() {
       if (data.meals) {
         data.meals.forEach((meal) => {
           html += `
-                
+          <h2 class="title">Your Search Results:</h2>
                     <div class = "meal-item" data-id = "${meal.idMeal}">
                     <div class="fas fa-heart heart h"></div>
                         <div class = "meal-img">
