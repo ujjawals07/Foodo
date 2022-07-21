@@ -117,11 +117,6 @@ document.querySelector(".about").onmousemove = (e) => {
   ).style.transform = `translateX(${y}px) translateY(${x}px)`;
 };
 
-document.querySelector(".home").onmouseleave = () => {
-  document.querySelector(
-    ".home .home-parallax-img"
-  ).style.transform = `translateX(0px) translateY(0px)`;
-};
 let homebtn = document.querySelector("#home-btn");
 
 homebtn.addEventListener("click", function () {
@@ -154,7 +149,7 @@ function getMealList() {
       if (data.meals) {
         data.meals.forEach((meal) => {
           html += `
-          <h2 class="title">Your Search Results:</h2>
+         
                     <div class = "meal-item" data-id = "${meal.idMeal}">
                     <div class="fas fa-heart heart h"></div>
                         <div class = "meal-img">
@@ -242,7 +237,6 @@ function setMealList() {
          </div>
                 `;
         }
-        bestmealcontainer.classList.remove("notFound");
       }
 
       bestmealcontainer.innerHTML = htmli;
@@ -279,7 +273,6 @@ function popularMealList() {
          </div>
                 `;
         }
-        popularmealcontainer.classList.remove("notFound");
       }
 
       popularmealcontainer.innerHTML = htmli;
@@ -343,9 +336,6 @@ function login() {
     alert("log in  succesfullied");
     loginform.classList.remove("login-form-container-active");
     containers.classList.remove("containers-deactiveate");
-    bestmealfav.addEventListener("click", addtofavbtn);
-    popularmealfav.addEventListener("click", addtofavbtn);
-    searchmealfav.addEventListener("click", addtofavbtn);
   } else {
     alert("wrong password or an email");
   }
@@ -357,16 +347,52 @@ let logo = loginbtn.addEventListener("click", function () {
   login();
 });
 //message of header for login
-const message = document.createElement("div");
-message.classList.add("message");
-message.innerHTML = `IF you  are logged in then you can add recipes in favorite. <button class="got got-remove">Got It </button>`;
-home.prepend(message);
+// const message = document.createElement("div");
+// message.classList.add("message");
+// message.innerHTML = `IF you  are logged in then you can add recipes in favorite. <button class="got got-remove">Got It </button>`;
+// home.prepend(message);
 
-document.querySelector(".got-remove").addEventListener("click", function () {
-  message.remove();
-});
+// document.querySelector(".got-remove").addEventListener("click", function () {
+//   message.remove();
+// });
 
 //add to fav
+
+function favgetMealRecipe(e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains("recipe-btn")) {
+    let mealItem = e.target.parentElement.parentElement;
+    console.log(mealItem);
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => emealRecipeModal(data.meals));
+  }
+}
+
+function emealRecipeModal(meal) {
+  meal = meal[0];
+  let html = `
+        <h2 class = "recipe-title">${meal.strMeal}</h2>
+        <p class = "recipe-category">${meal.strCategory}</p>
+        <div class = "recipe-instruct">
+            <h3>Instructions:</h3>
+            <p>${meal.strInstructions}</p>
+        </div>
+        <div class = "recipe-meal-img">
+            <img src = "${meal.strMealThumb}" alt = "">
+        </div>
+        <div class = "recipe-link">
+            <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
+        </div>
+    `;
+  mealDetailsContent.innerHTML = html;
+  mealDetailsContent.parentElement.classList.add("showRecipe");
+}
+let fav = document.querySelector("#fav-meal");
+fav.addEventListener("click", favgetMealRecipe);
 let bestmealfav = document.querySelector(".bestmealsfav");
 let popularmealfav = document.querySelector(".popularmealsfav");
 let searchmealfav = document.querySelector(".searchmealfav");
@@ -393,15 +419,18 @@ function add(mealname, mealimg) {
     }
   }
   let favinnerhtml = `
+  <div class="fav-item" data-id="${meal.idMeal}">
 <div class="fav-img">
 <img src="${mealimg}" alt="food" class="fav-pic" />
 </div>
 <div class="fav-name">
 <h3 class="fav-result-h">${mealname}</h3>
 
-<button class="view-recipe search-recipe-btn">view Recipe</button>
+<button class="recipe-btn view-recipe search-recipe-btn">view Recipe</button>
 <button class="remove-recipe remove-recipe-btn">remove</button>
 </div>
+</div>
+
 
  `;
   favbox.innerHTML = favinnerhtml;
@@ -410,6 +439,13 @@ function add(mealname, mealimg) {
     .getElementsByClassName("remove-recipe")[0]
     .addEventListener("click", function (event) {
       let remove = event.target;
-      remove.parentElement.parentElement.remove();
+      console.log(
+        remove.parentElement.parentElement.parentElement.parentElement
+      );
+      remove.parentElement.parentElement.parentElement.remove();
     });
 }
+bestmealfav.addEventListener("click", addtofavbtn);
+
+popularmealfav.addEventListener("click", addtofavbtn);
+searchmealfav.addEventListener("click", addtofavbtn);
