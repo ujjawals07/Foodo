@@ -1147,6 +1147,7 @@ body {
   border: none;
   border-bottom: 2px solid darkgreen;
   cursor: pointer;
+  margin-top: 8rem;
 }
 
 .search-form-container form input {

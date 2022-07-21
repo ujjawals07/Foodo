@@ -183,6 +183,8 @@ body {
   animation: fadeUp 0.4s linear;
   //position: fixed;
 }
+
+
 #search-box {
   width: 60%;
   height: 4rem;
@@ -190,7 +192,9 @@ body {
   border: none;
   border-bottom: 2px solid darkgreen;
   cursor: pointer;
+  margin-top: 8rem;
 }
+
 .search-form-container form input {
   height: 100%;
   width: 100%;
@@ -219,7 +223,7 @@ body {
 }
 .heart {
   font-size: 2rem;
- // margin-top: 2rem;
+  // margin-top: 2rem;
   text-decoration: none;
   display: flex;
   flex-flow: column;
